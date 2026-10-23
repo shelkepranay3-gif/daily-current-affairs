@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Article</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="article"></div>
+
+<script src="data.js"></script>
+
+<script>
+
+const id = localStorage.getItem("articleId");
+
+const article = articles.find(a => a.id == id);
+
+document.getElementById("article").innerHTML = `
+
+<div class="article-container">
+
+<img src="${article.image}" class="article-image">
+
+<h1 class="article-title">
+${article.title}
+</h1>
+
+<p class="meta">
+👤 Author: ${article.author}
+</p>
+
+<p class="meta">
+📅 Date: ${article.date}
+</p>
+
+<p class="meta">
+🏷️ Category: ${article.category}
+</p>
+
+<hr style="margin:20px 0;">
+
+<div class="content">
+${article.content}
+</div>
+
+<br>
+
+<a href="index.html">
+<button class="back-btn">
+← Back To Home
+</button>
+</a>
+
+<button class="back-btn" onclick="shareArticle()">
+📤 Share Article
+</button>
+
+<button class="back-btn" onclick="bookmarkArticle()">
+🔖 Bookmark
+</button>
+
+</div>
+
+`;
+
+function shareArticle(){
+
+const shareText =
+article.title + "\n\n" + article.content;
+
+navigator.clipboard.writeText(shareText);
+
+alert(
+"Article copied to clipboard!\n\nYou can now paste it into WhatsApp, Telegram, Email, etc."
+);
+
+}
+
+function bookmarkArticle(){
+
+let bookmarks =
+JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+if(!bookmarks.includes(article.id)){
+bookmarks.push(article.id);
+}
+
+localStorage.setItem(
+"bookmarks",
+JSON.stringify(bookmarks)
+);
+
+alert("Article Bookmarked!");
+
+}
+
+</script>
+
+</body>
+
+</html>

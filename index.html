@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daily Current Affairs</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+📰 Daily Current Affairs
+</div>
+
+<nav>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="javascript:void(0)" onclick="filterNews('National')">National</a>
+
+<a href="javascript:void(0)" onclick="filterNews('Technology')">Technology</a>
+
+<a href="javascript:void(0)" onclick="filterNews('Sports')">Sports</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<button id="darkBtn">🌙</button>
+
+</nav>
+</header>
+<div class="ticker">
+
+<div class="ticker-content">
+
+🔴 BREAKING:
+Parliament Session Begins |
+India Launches AI Mission |
+Stock Market Reaches New High |
+India Wins Cricket Series
+
+</div>
+
+</div>
+
+<section class="featured-news">
+
+<div class="featured-content">
+
+<h1>
+India Launches New AI Mission
+</h1>
+
+<p>
+Government announces a nationwide AI initiative
+to boost innovation and digital transformation.
+</p>
+
+<button onclick="openArticle(1)">
+Read Full Story
+</button>
+
+</div>
+
+</section>
+
+<section class="hero">
+
+<h1>
+Latest Current Affairs
+</h1>
+
+<p>
+Stay updated with daily national and international news.
+</p>
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search news..."
+>
+
+</section>
+
+<section class="categories">
+
+<button onclick="filterNews('All')">All</button>
+
+<button onclick="filterNews('National')">National</button>
+
+<button onclick="filterNews('Technology')">Technology</button>
+
+<button onclick="filterNews('Economy')">Economy</button>
+
+<button onclick="filterNews('Sports')">Sports</button>
+
+
+
+</section>
+
+<section id="newsContainer">
+
+</section>
+
+<footer>
+
+<h3>Daily Current Affairs</h3>
+
+<p>
+Stay informed with trusted news and current affairs.
+</p>
+
+<p>
+© 2026 Daily Current Affairs
+</p>
+
+</footer>
+
+<script src="data.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
